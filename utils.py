@@ -39,7 +39,7 @@ class HTMLoader:
         print(url)
         print('downloading...')
         while True:
-            # time.sleep(random.random() * 2 + 1)
+            time.sleep(random.random() * 0.5)
             proxy = random.choice(self.proxies)
             try:
                 if ifProxy:
