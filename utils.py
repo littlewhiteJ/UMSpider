@@ -36,21 +36,21 @@ class HTMLoader:
             self.proxies = json.load(f)
 
     def getHTML(self, url, ifProxy=0):
-        print(url)
-        print('downloading...')
+        # print(url)
+        # print('downloading...')
         while True:
-            time.sleep(random.random() * 0.5)
+            # time.sleep(random.random() * 0.5)
             proxy = random.choice(self.proxies)
             try:
                 if ifProxy:
                     strhtml = requests.get(url, timeout=30, proxies=proxy)
                 else:
                     strhtml = requests.get(url, timeout=30)
-                print(url)
-                print(200)
+                # print(url)
+                # print(200)
                 return strhtml.text
             except:
-                print(url)
+                # print(url)
                 print('fail, and try again.')
                 self.reTryCnt += 1
                 if self.reTryCnt == self.maxReTryCnt:
